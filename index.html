@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>N Clock</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header>
+    <nav>
+      <button id="tabClock">時計</button>
+      <button id="tabStopwatch">ストップウォッチ</button>
+      <button id="tabAlarm">アラーム</button>
+      <button id="tabSettings">設定</button>
+    </nav>
+  </header>
+  <main>
+    <div id="display">00:00</div>
+    <div id="sliderBox">
+      <label id="labelLeft">1日の長さ</label>
+      <input type="range" id="sliderHours" min="12" max="48" step="1">
+      <span id="labelHours">24 時間</span>
+    </div>
+
+    <div id="stopwatchArea">
+      <button id="swStart" class="btn-large btn-start" data-key-start>Start</button>
+      <button id="swLap" disabled data-key="btn.lap">Lap</button>
+      <button id="swReset" disabled data-key="btn.reset">Reset</button>
+      <div id="lapList"></div>
+    </div>
+
+    <div id="alarmArea">
+      <input type="time" id="alarmTime">
+      <button id="alarmSetBtn" data-key="btn.addAlarm">アラーム追加</button>
+      <div id="alarmsContainer"></div>
+    </div>
+
+    <div id="settingsArea">
+      <div>
+        <label id="secondsLabel">表示</label>
+        <input type="checkbox" id="secondsToggle">
+      </div>
+      <div>
+        <label for="langSelect" data-key="settings.language">言語</label>
+        <select id="langSelect">
+          <option value="ja">日本語</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">設定は自動で保存されます。</footer>
+  <script src="script.js"></script>
+</body>
+</html>
